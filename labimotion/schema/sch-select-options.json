@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "select_options": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/optionObject"
+      }
+    }
+  },
+  "definitions": {
+    "optionObject": {
+      "type": "object",
+      "properties": {
+        "desc": {
+          "type": "string",
+          "description": "The description of the option"
+        },
+        "options": {
+          "$ref": "#/definitions/optionArray"
+        }
+      },
+      "required": [
+        "desc",
+        "options"
+      ]
+    },
+    "optionArray": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The value of the option"
+          },
+          "label": {
+            "type": "string",
+            "description": "The label of the option"
+          }
+        },
+        "required": [
+          "key"
+        ]
+      }
+    }
+  }
+}

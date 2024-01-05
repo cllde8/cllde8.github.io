@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "sch-common-properties.json"
+    },
+    {
+      "properties": {
+        "layers": {
+          "$ref": "sch-layers.json"
+        },
+        "select_options": {
+          "$ref": "sch-select-options.json"
+        }
+      }
+    }
+  ]
+}
