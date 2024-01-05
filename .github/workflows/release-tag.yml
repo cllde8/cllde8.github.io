@@ -2,8 +2,6 @@ name: Release
 
 on:
   push:
-    branches:
-      - develop
     tags:
       - 'v*'
 
@@ -14,6 +12,15 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
+
+    - name: Verify tag is on develop branch
+      run: |
+        TAG_COMMIT_HASH=$(git rev-list -n 1 ${{ github.ref }})
+        DEVELOP_COMMIT_HASH=$(git rev-list -n 1 develop)
+        if [ "$TAG_COMMIT_HASH" != "$DEVELOP_COMMIT_HASH" ]; then
+          echo "Tag does not point to the head of the develop branch"
+          exit 1
+        fi
 
     - name: Replace VERSION with tag name
       run: |
