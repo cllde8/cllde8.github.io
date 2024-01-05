@@ -1,0 +1,32 @@
+cname: Release
+
+on:
+  push:
+    branches:
+      - develop
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Replace VERSION with tag name
+      run: |
+        TAG_NAME=${GITHUB_REF#refs/tags/}
+        find . -name '*.json' -exec sed -i "s/VERSION/$TAG_NAME/g" {} \;
+
+    - name: Commit changes
+      run: |
+        git config --local user.email "chia-lin.lin@kit.edu"
+        git config --local user.name "chia-lin.lin"
+        git commit -am "Release $TAG_NAME"
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
