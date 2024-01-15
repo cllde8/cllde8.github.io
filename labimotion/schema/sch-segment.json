@@ -4,15 +4,15 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "sch-common-properties.json"
+      "$ref": "./include/sch-common-properties.json"
     },
     {
       "properties": {
         "layers": {
-          "$ref": "sch-layers.json"
+          "$ref": "./include/sch-layers.json"
         },
         "select_options": {
-          "$ref": "sch-select-options.json"
+          "$ref": "./include/sch-select-options.json"
         }
       }
     }

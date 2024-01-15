@@ -4,14 +4,14 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "sch-common-properties.json"
+      "$ref": "./include/sch-common-properties.json"
     },
     {
       "properties": {
         "layers": {
           "allOf": [
             {
-              "$ref": "sch-layers.json"
+              "$ref": "./include/sch-layers.json"
             },
             {
               "properties": {
@@ -23,7 +23,7 @@
           ]
         },
         "select_options": {
-          "$ref": "sch-select-options.json"
+          "$ref": "./include/sch-select-options.json"
         }
       }
     }
