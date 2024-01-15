@@ -1,5 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://labimotion.github.io/schemas/v0.0.1/sub-field.json",
   "type": "object",
   "properties": {
     "id": {

@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://www.chemotion-repository.net/schemas/labimotion/v0.0.1/common-properties.json",
+  "$id": "https://labimotion.github.io/schemas/v0.0.1/common-properties.json",
   "title": "Labimotion Common Properties",
   "description": "Common properties for Labimotion",
   "type": "object",
