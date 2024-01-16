@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://cllde8.github.io/labimotion/schema/v1.0/sch-sub-field.json",
+  "type": "object",
+  "properties": {
+    "id": {
+      "$ref": "sch-common.json#/definitions/uuid",
+      "description": "The unique identifier for a sub-field"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "drag_molecule",
+        "drag_sample",
+        "system-defined",
+        "text"
+      ],
+      "description": "The type of the object."
+    },
+    "value": {
+      "type": "string",
+      "description": "The value of the sub-field."
+    },
+    "col_name": {
+      "type": "string",
+      "description": "The name of the column or from the selected system-defined."
+    },
+    "value_system": {
+      "type": "string",
+      "description": "The key of the selected system-defined unit."
+    },
+    "option_layer": {
+      "type": "string",
+      "description": "The field of the selected system-defined."
+    }
+  },
+  "required": [
+    "id",
+    "type",
+    "value"
+  ]
+}

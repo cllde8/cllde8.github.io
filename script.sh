@@ -1,8 +1,10 @@
 #!/bin/bash
 
-directoryPath="./labimotion/schema"
-# baseUrl="https://labimotion.github.io/schema/v1.0"
-baseUrl="https://cllde8.github.io/labimotion/schema/v1.0"
+targetVersion="v1.0" # change this to the version you want to update to
+
+mainPath="./labimotion/schema"
+sourcePath="./labimotion/src"
+baseUrl="https://cllde8.github.io/labimotion/schema/$targetVersion"
 
 for file in $(find $directoryPath -name "*.json")
 do
@@ -17,3 +19,14 @@ done
 
 # chmod +x script.sh before running
 # ./script.sh
+
+targetDirectory="$mainPath/$targetVersion"
+latestDirectory="$mainPath/latest"
+
+# Create the target directory if it doesn't exist
+mkdir -p "$targetDirectory"
+mkdir -p "$latestDirectory"
+
+# Copy the source directory to the target directory
+cp -r "$sourcePath"/* "$targetDirectory"
+cp -r "$sourcePath"/* "$latestDirectory"
