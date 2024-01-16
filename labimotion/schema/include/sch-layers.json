@@ -1,28 +1,48 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://labimotion.github.io/schemas/v0.0.1/layers.json",
+  "$id": "https://cllde8.github.io/labimotion/schema/v1.0/sch-layers.json",
   "type": "object",
   "patternProperties": {
     "^[a-zA-Z0-9_.]+$": {
       "type": "object",
       "properties": {
         "key": {
-          "type": "string"
+          "type": "string",
+          "description": "Unique key of the layer."
         },
         "cols": {
-          "type": "integer"
+          "type": "integer",
+          "description": "Number of columns per row."
         },
         "color": {
-          "type": "string"
+          "type": "string",
+          "enum": [
+            "danger",
+            "default",
+            "info",
+            "none",
+            "primary",
+            "success",
+            "warning"
+          ],
+          "description": "Background color of the layer header."
         },
         "label": {
-          "type": "string"
+          "type": "string",
+          "description": "Label of the layer."
         },
         "style": {
-          "type": "string"
+          "type": "string",
+          "enum": [
+            "panel_generic_heading",
+            "panel_generic_heading_bu",
+            "panel_generic_heading_bui"
+          ],
+          "description": "Font style of the layer header."
         },
         "position": {
-          "type": "integer"
+          "type": "integer",
+          "description": "Position of the layer in the list of layers."
         },
         "fields": {
           "type": "array",
@@ -37,10 +57,12 @@
           }
         },
         "wf": {
-          "type": "boolean"
+          "type": "boolean",
+          "description": "Whether the layer is a workflow layer."
         },
         "wf_position": {
-          "type": "integer"
+          "type": "integer",
+          "description": "Position of the layer in the workflow."
         }
       },
       "required": [

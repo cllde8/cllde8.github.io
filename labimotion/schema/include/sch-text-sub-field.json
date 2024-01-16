@@ -1,19 +1,23 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://labimotion.github.io/schemas/v0.0.1/text-sub-field.json",
+  "$id": "https://cllde8.github.io/labimotion/schema/v1.0/sch-text-sub-field.json",
   "type": "object",
   "properties": {
     "id": {
-      "$ref": "sch-common.json#/definitions/uuid"
+      "$ref": "sch-common.json#/definitions/uuid",
+      "description": "The unique identifier of the text sub field."
     },
     "layer": {
-      "type": "string"
+      "type": "string",
+      "description": "The layer to be used as input for the text sub field."
     },
     "field": {
-      "type": "string"
+      "type": "string",
+      "description": "The field name of the field to be used as input for the text sub field."
     },
     "separator": {
-      "type": "string"
+      "type": "string",
+      "description": "The separator to be used to split the input field into sub fields."
     }
   },
   "required": [

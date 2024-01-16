@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://labimotion.github.io/schemas/v0.0.1/element.json",
+  "$id": "https://cllde8.github.io/labimotion/schema/v1.0/sch-element.json",
   "type": "object",
   "allOf": [
     {
@@ -11,19 +11,21 @@
         "layers": {
           "allOf": [
             {
-              "$ref": "./include/sch-layers.json"
+              "$ref": "./include/sch-layers.json",
+              "description": "Layers to be used for element."
             },
             {
               "properties": {
                 "timeRecord": {
-                  "type": "string"
+                  "$ref": "./include/sch-common.json#/definitions/dateTime"
                 }
               }
             }
           ]
         },
         "select_options": {
-          "$ref": "./include/sch-select-options.json"
+          "$ref": "./include/sch-select-options.json",
+          "description": "Select options for element."
         }
       }
     }

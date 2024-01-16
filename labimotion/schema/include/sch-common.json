@@ -1,23 +1,24 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://labimotion.github.io/schemas/v0.0.1/common.json",
+  "$id": "https://cllde8.github.io/labimotion/schema/v1.0/sch-common.json",
   "title": "Common Schema for Chemotion LabIMotion",
-  "description": "Common Schema for Chemotion LabIMotion",
+  "description": "Common Schema for Chemotion LabIMotion.",
   "definitions": {
     "eln": {
       "type": "object",
+      "description": "The ELN information.",
       "properties": {
         "version": {
           "type": "string",
-          "description": "Version of the ELN"
+          "description": "Version of the ELN."
         },
         "base_revision": {
           "type": "string",
-          "description": "Base revision of the ELN"
+          "description": "Base revision of the ELN."
         },
         "current_revision": {
           "type": "string",
-          "description": "Current revision of the ELN"
+          "description": "Current revision of the ELN."
         }
       },
       "required": [
@@ -29,12 +30,12 @@
     "dateTime": {
       "type": "string",
       "format": "date-time",
-      "description": "Date and time in ISO 8601 format"
+      "description": "Date and time in ISO 8601 format."
     },
     "uuid": {
       "type": "string",
       "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
-      "description": "UUID in the format of 8-4-4-4-12 hexadecimal digits"
+      "description": "UUID in the format of 8-4-4-4-12 hexadecimal digits."
     }
   }
 }

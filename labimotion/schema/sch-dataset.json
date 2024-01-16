@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://cllde8.github.io/labimotion/schema/v1.0/sch-segment.json",
+  "$id": "https://cllde8.github.io/labimotion/schema/v1.0/sch-dataset.json",
   "type": "object",
   "allOf": [
     {
