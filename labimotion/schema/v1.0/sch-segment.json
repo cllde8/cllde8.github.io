@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://cllde8.github.io/labimotion/schema/v1.0/sch-segment.json",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "./include/sch-common-properties.json"
+    },
+    {
+      "properties": {
+        "layers": {
+          "$ref": "./include/sch-layers.json",
+          "description": "Layers to be used for segment."
+        },
+        "select_options": {
+          "$ref": "./include/sch-select-options.json",
+          "description": "Select options for segment."
+        }
+      }
+    }
+  ]
+}

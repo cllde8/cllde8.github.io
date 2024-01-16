@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://cllde8.github.io/labimotion/schema/v1.0/sch-common-properties.json",
+  "title": "Labimotion Common Properties",
+  "description": "Common properties for Labimotion",
+  "type": "object",
+  "properties": {
+    "pkg": {
+      "eln": {
+        "$ref": "sch-common.json#/definitions/eln"
+      },
+      "labimotion": {
+        "type": "string",
+        "description": "LabIMotion version."
+      }
+    },
+    "uuid": {
+      "$ref": "sch-common.json#/definitions/uuid"
+    },
+    "klass": {
+      "type": "string",
+      "enum": [
+        "ElementKlass",
+        "SegmentKlass",
+        "DatasetKlass"
+      ],
+      "description": "LabIMotion class."
+    },
+    "released_at": {
+      "$ref": "sch-common.json#/definitions/dateTime",
+      "description": "Date and time of the release."
+    },
+    "identifier": {
+      "$ref": "sch-common.json#/definitions/uuid",
+      "description": "The identifier."
+    }
+  },
+  "required": [
+    "pkg",
+    "uuid",
+    "klass"
+  ]
+}

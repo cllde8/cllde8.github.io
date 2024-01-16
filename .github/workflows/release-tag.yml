@@ -1,0 +1,43 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        ref: develop
+        fetch-depth: 0
+
+    - name: Verify tag is on develop branch
+      run: |
+        TAG_COMMIT_HASH=$(git rev-list -n 1 ${{ github.ref }})
+        DEVELOP_COMMIT_HASH=$(git rev-list -n 1 develop)
+        if [ "$TAG_COMMIT_HASH" != "$DEVELOP_COMMIT_HASH" ]; then
+          echo "Tag does not point to the head of the develop branch"
+          exit 1
+        fi
+
+    - name: Replace VERSION with tag name
+      run: |
+        TAG_NAME=${GITHUB_REF#refs/tags/}
+        find . -name '*.json' -exec sed -i "s/VERSION/$TAG_NAME/g" {} \;
+
+    - name: Commit changes
+      run: |
+        git config --local user.email "chia-lin.lin@kit.edu"
+        git config --local user.name "chia-lin.lin"
+        git commit -am "Release $TAG_NAME"
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: develop

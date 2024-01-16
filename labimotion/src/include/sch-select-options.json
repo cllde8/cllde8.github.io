@@ -1,5 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://cllde8.github.io/labimotion/schema/v1.0/sch-select-options.json",
   "type": "object",
   "properties": {
     "select_options": {
@@ -15,7 +16,7 @@
       "properties": {
         "desc": {
           "type": "string",
-          "description": "The description of the option"
+          "description": "The description of the option."
         },
         "options": {
           "$ref": "#/definitions/optionArray"
@@ -33,11 +34,11 @@
         "properties": {
           "key": {
             "type": "string",
-            "description": "The value of the option"
+            "description": "The value of the option."
           },
           "label": {
             "type": "string",
-            "description": "The label of the option"
+            "description": "The label of the option."
           }
         },
         "required": [

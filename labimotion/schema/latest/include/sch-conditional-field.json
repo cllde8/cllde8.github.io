@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://cllde8.github.io/labimotion/schema/v1.0/sch-conditional-field.json",
+  "type": "object",
+  "properties": {
+    "id": {
+      "$ref": "sch-common.json#/definitions/uuid",
+      "description": "The unique identifier of the conditional field."
+    },
+    "layer": {
+      "type": "string",
+      "description": "The layer to be checked."
+    },
+    "field": {
+      "type": "string",
+      "description": "The field to be checked."
+    },
+    "value": {
+      "type": "string",
+      "description": "The value to be checked."
+    }
+  },
+  "required": [
+    "id",
+    "layer",
+    "field",
+    "value"
+  ]
+}
