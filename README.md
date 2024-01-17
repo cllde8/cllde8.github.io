@@ -2,11 +2,9 @@
 
 The LabIMotion Template Schema provides a contract for the Template used and details the properties, types, and other constraints that the Template should have.
 
-## Official site
+:white_check_mark: Go to the [LabIMotion Schema](https://labimotion.github.io/) website to view the latest version.
 
-Go to the [LabIMotion Schema](https://labimotion.github.io/) website to view the latest version.
-
-The older versions (if any) can be found in the menu on the top-right side of the page.
+:white_check_mark: The older versions (if any) can be found in the menu on the top-right side of the page.
 
 Find more about LabIMotion at:
 
