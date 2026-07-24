@@ -1,0 +1,133 @@
+:root { color-scheme: light dark; }
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+}
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  flex: 0 0 240px;
+  border-right: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+  padding: 1.5rem 1rem;
+}
+
+.sidebar-title {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.6;
+  margin: 0 0 1rem;
+}
+
+.project-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.project-list li + li {
+  margin-top: 0.25rem;
+}
+
+.project-list a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-list a:hover {
+  background: color-mix(in srgb, currentColor 8%, transparent);
+}
+
+.project-list a.active {
+  background: color-mix(in srgb, currentColor 15%, transparent);
+  font-weight: 600;
+}
+
+.content {
+  flex: 1 1 auto;
+  padding: 2rem clamp(1rem, 4vw, 3rem);
+  max-width: 800px;
+}
+
+.content h2 {
+  margin-top: 0;
+}
+
+.content .updated {
+  opacity: 0.6;
+  font-size: 0.9rem;
+  margin-top: -0.5rem;
+}
+
+.content .status {
+  white-space: pre-wrap;
+}
+
+.artifact-list {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+
+.artifact-list li + li {
+  margin-top: 0.5rem;
+}
+
+.artifact-list a {
+  color: inherit;
+}
+
+.no-artifacts {
+  opacity: 0.6;
+  font-style: italic;
+}
+
+.sidebar-toggle {
+  display: none;
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 20;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid currentColor;
+  border-radius: 6px;
+  background: Canvas;
+  color: CanvasText;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .sidebar-toggle {
+    display: block;
+  }
+
+  .sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: 240px;
+    background: Canvas;
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+    z-index: 15;
+    padding-top: 4rem;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .content {
+    padding-top: 4rem;
+  }
+}

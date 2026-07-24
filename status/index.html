@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Status Updates · Claude Projects</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="layout">
+    <button id="sidebar-toggle" class="sidebar-toggle" aria-expanded="false" aria-controls="sidebar">☰ Projects</button>
+    <nav id="sidebar" class="sidebar">
+      <h1 class="sidebar-title">Projects</h1>
+      <ul id="project-list" class="project-list"><!-- populated by app.js --></ul>
+    </nav>
+    <main id="content" class="content"><!-- populated by app.js --></main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
